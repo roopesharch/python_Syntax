@@ -1,80 +1,32 @@
-from pyvirtualdisplay import Display
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import pandas as pd
-import time
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import bs4
-import re
-import random
-import logging
-import logging.handlers
-import pickle
-import pyautogui
-import csv
-from PIL import Image # Import the packages – Selenium, Selenium-Screenshot, Pillow.
-import json
-from threading import Thread
-import _ctypes
 
+driver_path="Driver_path"
+PROXY="Type_proxy"
 
-proxy_data= pd.read_csv('/Users/roopesharch/project/linkedin/proxy.csv', header=[0])
-proxy_data.head()
-print("\n\t total length of proxy = ",len(proxy_data),"\n" )
+chrome_option = webdriver.ChromeOptions()
+chrome_option.add_argument("--disable-notifications")
+chrome_option.add_argument('--headless')
+chrome_option.add_argument('--proxy-server=%s' % PROXY)
+chrome_option.add_argument("--incognito")
+chrome_option.add_argument("--start-maximized")
 
-for i in range(0,len(proxy_data)):
-    
-    
-    driver_path="/Users/roopesharch/project/linkedin/chromedriver"
-
-    PROXY=proxy_data['Proxy'][i]
-
-    chrome_option = webdriver.ChromeOptions()
-    chrome_option.add_argument("--disable-notifications")
-    chrome_option.add_argument('--headless')
-    chrome_option.add_argument('--proxy-server=%s' % PROXY)
-    chrome_option.add_argument("--incognito")
-    chrome_option.add_argument("--start-maximized")
-
-    working=0
-    connection_attempt=0
-    while True:
-        connection=0
-        connection_attempt=connection_attempt+1
-        try:
-            driver = webdriver.Chrome(executable_path= driver_path,chrome_options=chrome_option)
-            driver.maximize_window()
-            br=1
-            connection=1
-    #         print("\n Connection successfull")
-        except Exception as e:
-            print(e)
-            driver_path=input("\n Enter the Compatible chrome driver path")
-
-        if connection==1 or connection_attempt > 5:
-            break
+connection_attempt=0
+while True:
+    connection=0
+    connection_attempt=connection_attempt+1
     try:
-        driver.get("https://www.linkedin.com/login")
+        driver = webdriver.Chrome(executable_path= driver_path,chrome_options=chrome_option)
+        driver.maximize_window()
+        br=1
+        connection=1
+        print("\n Connection successfull")
     except Exception as e:
-        pass
+        print(e)
+        driver_path=input("\n Enter the Compatible chrome driver path")
 
-    Element='//*[@id="app__container"]'
-    try:
-        myElem = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, Element)))
-#         print ("Linkedin element detected")
-        working=1
-    except Exception as e:
-        proxy_data['Status'][i]='Blocked'
-        working=1
-    print("\n",proxy_data['Proxy'][i],"\t completed \t ", i)
+    if connection==1 or connection_attempt > 5:
+        break
+
+    driver.get("https://www.linkedin.com/login")
     
-    if working==1:
-        proxy_data.to_csv('/Users/roopesharch/project/linkedin/proxy.csv',index=False)
-    try:
-        driver.quit()
-    except:
-        pass
-            
+ 
