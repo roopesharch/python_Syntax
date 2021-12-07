@@ -27,6 +27,4 @@ while True:
     if connection==1 or connection_attempt > 5:
         break
 
-    driver.get("https://www.linkedin.com/login")
-    
- 
+driver.get("https://www.linkedin.com/login")
