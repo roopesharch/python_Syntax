@@ -9,6 +9,7 @@ FROM_EMAIL = "your email"
 FROM_PWD = "your_passowrd" 
 
 # this is for gmail,So change based on service provider name
+# In setting turn on "Less secure apps" to enable mail authorization  # navigation. Settings > Accounts & imports > Other google setting > (scroll) less secure apps
 SMTP_SERVER = "imap.gmail.com" 
 
 
