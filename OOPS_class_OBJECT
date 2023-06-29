@@ -1,0 +1,30 @@
+
+class parent():
+    
+    parent_variable = "demo_name_parent here"
+    
+    #method or parent function
+    def __init__(self,var1):
+        self.var1=var1
+        self.var2='sita'
+        print("i am parent class")
+        
+    #constructor
+    def parent_function1(self):
+        print("i am parent function one")
+        
+    def parent_function2(self,name):
+        self.name = name
+        print("my name is ",name)
+        
+    def parent_function3(self):
+        print("i am from function 3 from parent class importing",self.var2)
+        
+
+
+p1=parent('variable_name')
+print(p1.parent_variable)
+print(p1.var1)
+p1.parent_function1()
+p1.parent_function2("Roopesh")
+p1.parent_function3()
