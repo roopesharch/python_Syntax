@@ -53,5 +53,9 @@ for i in range(s1+len('will'),s2):
     s3=s3+str[i]
 print(s3)
 
+#  or another method using str[4:5] method
+print(str[str.index("will")+ len('will'):str.index("ing")])
+
+
 
 
