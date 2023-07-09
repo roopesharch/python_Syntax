@@ -41,5 +41,17 @@ String1 = "{l} {f} {g}".format(g='Geeks', f='For', l='Life')
 print("\nPrint String in order of Keywords: ")
 print(String1)
 
+# Extract sub string between 2 strings
+str="my name will be some things better"
+print(str)
+s1=str.index("will")
+s2=str.index("ing")
+s3=""
+print(s1,s2)
+
+for i in range(s1+len('will'),s2):
+    s3=s3+str[i]
+print(s3)
+
 
 
