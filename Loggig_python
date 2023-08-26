@@ -17,3 +17,17 @@ logger.info("Just an information")
 logger.warning("Its a Warning")
 logger.error("Did you try to divide by zero")
 logger.critical("Internet is down")
+
+# Logger.info(msg): This will log a message with level INFO on this logger.
+# Logger.warning(msg): This will log a message with a level WARNING on this logger.
+# Logger.error(msg): This will log a message with level ERROR on this logger.
+# Logger.critical(msg): This will log a message with level CRITICAL on this logger.
+# Logger.log(lvl,msg): This will Log a message with integer level lvl on this logger.
+# Logger.exception(msg): This will log a message with level ERROR on this logger.
+# Logger.setLevel(lvl): This function sets the threshold of this logger to lvl. This means that all the messages below this level will be ignored.
+# Logger.addFilter(filt): This adds a specific filter fit into this logger.
+# Logger.removeFilter(filt): This removes a specific filter fit into this logger.
+# Logger.filter(record): This method applies the logger’s filter to the record provided and returns True if the record is to be processed. Else, it will return False.
+# Logger.addHandler(hdlr): This adds a specific handler hdlr to this logger.
+# Logger.removeHandler(hdlr) : This removes a specific handler hdlr into this logger.
+# Logger.hasHandlers(): This checks if the logger has any handler configured or not. 
