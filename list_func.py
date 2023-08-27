@@ -51,5 +51,9 @@ print(a.pop())
 a.remove(6)
 print(a)
 
+# copy a list
+lst2=[1,5,7,4,9,10]
+lst1=lst2.copy()
+
 
 
