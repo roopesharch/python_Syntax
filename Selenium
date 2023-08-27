@@ -17,7 +17,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-# EC conditions:
+#EC conditions:
 # title_is
 # title_contains
 # presence_of_element_located
