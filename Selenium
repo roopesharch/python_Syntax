@@ -4,7 +4,9 @@ from selenium import webdriver
 Element=driver. find_element(By.ID,"LoginID")
 Element=driver. find_element(By.NAME,"FormName")
 Element=driver. find_element(By.XPATH,"//form[@id='loginForm']")
+
 # https://www.w3schools.com/xml/xpath_syntax.asp
+# //*[text()='visible_text']
 
 Element=driver. find_element(By.LINK_TEXT,"Continue")
 Element=driver. find_element(By.PARTIAL_LINK_TEXT,"partial link text")
@@ -93,6 +95,14 @@ action.send_keys("Arrays")
 #-------------------------------------------------------------------------------
 # reset the action ---------
 action.reset_actions()
+
+
+#iterate in elements
+elements = driver.find_elements_by_class_name('content_1')
+    for element in elements:
+        NumePlaje = element.find_element_by_class_name('content_2')
+        print (NumePlaje.text)
+
 
 
 
