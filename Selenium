@@ -11,6 +11,9 @@ Element=driver. find_element(By.XPATH,"//form[@id='loginForm']")
 #driver inbuild methods
 # https://www.geeksforgeeks.org/web-driver-methods-in-selenium-python/
 
+# get location
+element.location
+
 Element=driver. find_element(By.LINK_TEXT,"Continue")
 Element=driver. find_element(By.PARTIAL_LINK_TEXT,"partial link text")
 Element=driver. find_element(By.TAG_NAME,"h1")
