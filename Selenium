@@ -8,6 +8,9 @@ Element=driver. find_element(By.XPATH,"//form[@id='loginForm']")
 # https://www.w3schools.com/xml/xpath_syntax.asp
 # //*[text()='visible_text']
 
+#driver inbuild methods
+# https://www.geeksforgeeks.org/web-driver-methods-in-selenium-python/
+
 Element=driver. find_element(By.LINK_TEXT,"Continue")
 Element=driver. find_element(By.PARTIAL_LINK_TEXT,"partial link text")
 Element=driver. find_element(By.TAG_NAME,"h1")
