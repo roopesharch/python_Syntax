@@ -1,0 +1,3 @@
+# call a fixture interally
+if __name__ == '__main__':
+    pytest.main(['-vv', 'test.py::test_title'])
