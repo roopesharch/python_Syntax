@@ -1,3 +1,25 @@
 # call a fixture interally
 if __name__ == '__main__':
     pytest.main(['-vv', 'test.py::test_title'])
+
+#---------------------------------------------------
+
+# conftest.py file
+@pytest.fixture()
+def set_driver(request)
+    driver=webdriver.Chrome(executable_file='')
+    request.cls.driver=driver
+
+    yield
+    driver.close
+
+
+#main base file.py
+
+class test()
+    @pytest_mark_usefixtures('set_driver')
+    def testing_driver(self)
+        self.driver.get('URL')
+
+#---------------------------------------------------
+
