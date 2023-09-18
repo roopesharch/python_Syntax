@@ -108,7 +108,32 @@ elements = driver.find_elements_by_class_name('content_1')
     for element in elements:
         NumePlaje = element.find_element_by_class_name('content_2')
         print (NumePlaje.text)
+#-------------------------------------------------------------------------------
+#screen shot
+driver.get_screenshot_as_file("file_name.jpg")
+#-------------------------------------------------------------------------------
+#swtich to alert
+driver.switch_to_alert()
 
+#-------------------------------------------------------------------------------
+#get current window handle
+p = driver.current_window_handle
+#get first child window
+chwd = driver.window_handles
+for w in chwd:
+#switch focus to child window
+    if(w!=p):
+    driver.switch_to.window(w)
+#-------------------------------------------------------------------------------
+#find if checkbox is checked
+# Find checkbox element
+mycheckbox = driver.find_element(By.ID, 'banana')
+
+# Check if checkbox is selected
+if mycheckbox.is_selected():
+    print(f"{mycheckbox.get_attribute('value')} checkbox is selected.")
+else:
+    print(f"{mycheckbox.get_attribute('value')} checkbox is not selected.")
 
 
 
