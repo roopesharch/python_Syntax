@@ -135,6 +135,9 @@ if mycheckbox.is_selected():
 else:
     print(f"{mycheckbox.get_attribute('value')} checkbox is not selected.")
 
+#-------------------------------------------------------------------------------
+
+url=driver.current_url()
 
 
 
